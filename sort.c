@@ -101,13 +101,11 @@ void writeResult(int *number, int length, char *name)
         fprintf(fout, "%d\n", number[i]);
     }
 
-    /*
     printf("[+]SORT \"%s\":", name);
         for (int j = 0; j < length-1; j++) {
             printf("%d, ", number[j]);
         }
     printf("%d\n", number[length-1]);
-    */
 }
 
 void testSort(int *number, int length)
