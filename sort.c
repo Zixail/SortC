@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE    100500
+#define SIZE    10500
 
 void selectSort(int *array, int count, int *comparison, int *moving)
 {
