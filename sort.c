@@ -95,7 +95,7 @@ void mergeSort(int *array, int count, int *comparison, int *moving){
 }
 
 void writeResult(int *number, int length, char *name)
-{
+{   
     printf("[+] SORT \"%s\": ", name);
         for (int j = 0; j < length-1; j++) {
             printf("%d, ", number[j]);

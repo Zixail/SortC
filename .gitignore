@@ -1,4 +1,6 @@
 # Ignore executables and generated text outputs
+write.C
+check.c
 *.exe
 *.txt
 
