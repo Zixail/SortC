@@ -96,14 +96,6 @@ void mergeSort(int *array, int count, int *comparison, int *moving){
 
 void writeResult(int *number, int length, char *name)
 {
-    /*
-    FILE *fout = fopen(name, "w");
-    for(int i = 0; i < length; ++i){
-        fprintf(fout, "%d\n", number[i]);
-    }
-    fclose(fout);
-    */
-
     printf("[+]SORT \"%s\":", name);
         for (int j = 0; j < length-1; j++) {
             printf("%d, ", number[j]);
