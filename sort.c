@@ -96,7 +96,7 @@ void mergeSort(int *array, int count, int *comparison, int *moving){
 
 void writeResult(int *number, int length, char *name)
 {
-    printf("[+]SORT \"%s\":", name);
+    printf("[+] SORT \"%s\": ", name);
         for (int j = 0; j < length-1; j++) {
             printf("%d, ", number[j]);
         }
@@ -128,9 +128,7 @@ void testSort(int *number, int length)
         times[i] = timedif;
 
         char name[30];
-        strcpy(name, names[i]);
-        strcat(name, ".txt");
-        writeResult(copy, length, name);
+        writeResult(copy, length, names[i]);
     }
 
     for (int i = 0; i < 4; ++i) {
