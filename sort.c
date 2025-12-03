@@ -96,10 +96,13 @@ void mergeSort(int *array, int count, int *comparison, int *moving){
 
 void writeResult(int *number, int length, char *name)
 {
+    /*
     FILE *fout = fopen(name, "w");
     for(int i = 0; i < length; ++i){
         fprintf(fout, "%d\n", number[i]);
     }
+    fclose(fout);
+    */
 
     printf("[+]SORT \"%s\":", name);
         for (int j = 0; j < length-1; j++) {
@@ -122,7 +125,7 @@ void testSort(int *number, int length)
 
     for(int i = 0; i < 4; ++i){
         int copy[SIZE];
-        for(int i = 0; i < length; ++i) copy[i] = number[i];
+        for(int c = 0; c < length; ++c) copy[c] = number[c];
 
         begin = clock();
         sorts[i](copy, length, &comparison, &moving);
@@ -150,16 +153,16 @@ void testSort(int *number, int length)
 int main(int argc, char *argv[]) {
     int number[SIZE] = {0};
     int length;
-
-    if (argc == 1){
+    FILE *fp;
+    if (argc >= 2 && (fp = fopen(argv[1], "r")) != NULL){
+        for(length = 0; length < SIZE && fscanf(fp, "%d\n", &number[length]) >= 0; ++length) ;
+        fclose(fp);
+    }
+    else {
         srand(time(NULL));
         for(length = 0; length < SIZE; ++length){
             number[length] = rand();
         }
-    }
-    else{
-        FILE *fp = fopen(argv[1], "r");
-        for(length = 0; fscanf(fp, "%d\n", &number[length]) >= 0; ++length) ;
     }
 
     testSort(number, length);
