@@ -101,9 +101,11 @@ void writeResult(int *number, int length, char *name)
             printf("%d, ", number[j]);
         }
     printf("%d\n", number[length-1]);
-
-    strcat(name, ".txt");
-    FILE *fout = fopen(name, "w");
+    
+    char filename[30];
+    strcpy(filename, name);
+    strcat(filename, ".txt");
+    FILE *fout = fopen(filename, "w");
     for(int i = 0; i < length; ++i){
         fprintf(fout, "%d\n", number[i]);
     }
