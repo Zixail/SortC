@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE    10500
+#define SIZE    10
 
 void selectSort(int *array, int count, int *comparison, int *moving)
 {
@@ -101,6 +101,13 @@ void writeResult(int *number, int length, char *name)
             printf("%d, ", number[j]);
         }
     printf("%d\n", number[length-1]);
+
+    strcat(name, ".txt");
+    FILE *fout = fopen(name, "w");
+    for(int i = 0; i < length; ++i){
+        fprintf(fout, "%d\n", number[i]);
+    }
+    fclose(fout);
 }
 
 void testSort(int *number, int length)
